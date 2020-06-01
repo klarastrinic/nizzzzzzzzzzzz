@@ -1,28 +1,17 @@
-function fiboSequence(n){
-
-    var nums = [];
-
-    var num = 0;
-
-    var nextNum = 1;
-
-    var tempNum = 0;
-
-
-
-    for (var x = 0; x < n; x++){
-
-        nums.push(num);
-
-        tempNum = num + nextNum;
-
-        num = nextNum;
-
-        nextNum = tempNum;
-
+var length = 0;
+ 
+function fibonacci(length) {
+    var fibonacciArray = [];
+    for (var i = 0; i < length; i++) {
+        if (i === 0) {
+            fibonacciArray.push(0);
+        } else if (i === 1) {
+            fibonacciArray.push(1);
+        } else {
+            var sumTwoNumber = 0;
+            sumTwoNumber = fibonacciArray[i-2] + fibonacciArray[i-1];
+            fibonacciArray.push(sumTwoNumber); 
+        }
     }
-
-    return nums;
-
+    return fibonacciArray;
 }
-
